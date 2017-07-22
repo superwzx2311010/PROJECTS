@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="./template.js"></script>
+    <script type=text/html id="tem-weather">
+    <ul>
+        <li style="color: red;font-kerning: 700;font-size: 20px">查询城市:{{city}}</li>
+        <li>风向:{{WD}}</li>
+        <li>风速:{{WS}}</li>
+        <li>海拔:{{altitude}}</li>
+        <li>日期:{{date}}</li>
+        <li>最高温度:{{h_tmp}}</li>
+        <li>最低温度:{{l_tmp}}</li>
+        <li>平均温度:{{temp}}</li>
+        <li>日出时间:{{sunrise}}</li>
+        <li>日落时间:{{sunset}}</li>
+        <li>经度:{{latitude}}</li>
+        <li>纬度:{{longgitude}}</li>
+    </ul>
+</script>
+    <style type="text/css">
+        #container {
+            width: 600px;
+            height: 450px;
+            background-color: lightgreen;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+
+        }
+        li{
+            list-style: none;
+        }
+        .demo1,.demo2,.demo3 span{
+            color: red;
+           margin:20px 0;
+        }
+        #telresult,#weatherresult{
+            background-color: pink;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="demo1">
+        <span>demo1:省市县联动</span>&nbsp;&nbsp;
+        <label>
+            <select id="province">省:
+                <option>请输入省份...</option>
+            </select>
+        </label>
+        <label>
+            <select id="city">市:
+                <option>请输入省份...</option>
+            </select>
+        </label>
+        <label>
+            <select id="county">县:
+                <option>请输入省份...</option>
+            </select>
+        </label>
+    </div>
+    <div class="demo2">
+        <span>demo2:手机号查吉凶</span>
+        请输入手机号测测你的运势:
+        <input type="text" name="" id="tel">
+        <input type="button" value="查询" id="btn1">
+        <div id="telresult">期待你有个好运气(*^__^*)</div>
+    </div>
+    <div class="demo3">
+        <span>demo3:部分城市天气查询</span>
+        <label>选择城市查询天气:
+            <select id="weather">
+                <option selected="selected">请选择城市...</option>
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="广州">广州</option>
+                <option value="深圳">深圳</option>
+            </select>
+        </label>
+        <input type="button" value="查询" id="btn2">
+        <div id="weatherresult">猜猜明天是什么天气^_^</div>
+    </div>
+</div>
+<script src="jquery.js"></script>
+<script src=template.js ></script>
+<script type="text/html">
+</script>
+<script type="text/javascript">
+    $(function () {
+        function queryData(obj,callback) {
+            $.ajax({
+                url: "select.php",
+                type: "get",
+                dataType: "json",
+                data: obj,
+                success: function (data) {
+                    callback(data);
+                }
+            })
+        }
+        /*$.ajax({
+            url: "select.php",
+            type: "get",
+            dataType: "json",
+            data: {flag: "1"},
+            success: function (data) {
+                console.log(data);
+                var sttr="";
+                $.each(data,function (i,e) {
+                    sttr+="<option value="+e.id+">"+e.province+"</option>"
+                })
+               $("#province").append(sttr);
+            }
+        })*/
+
+        queryData({flag: "1"},function (data) {
+            console.log(data);
+            var sttr="";
+            $.each(data,function (i,e) {
+                sttr+="<option value="+e.id+">"+e.province+"</option>"
+            })
+            $("#province").append(sttr);
+        })
+        $("#province").change(function(){
+           /* $.ajax({
+                url: "select.php",
+                type: "get",
+                dataType: "json",
+                data: {flag: "2",
+                        pId:$(this).val(),
+                },
+                success: function (data) {
+                    $("#city option:gt(0)").remove();
+                    console.log(data);
+                    var sttr="";
+                    $.each(data,function (i,e) {
+                        sttr+="<option value="+e.id+">"+e.city+"</option>"
+                    })
+                    $("#city").append(sttr);
+                }
+            })*/
+            queryData({flag: "2",pId:$(this).val()},function (data) {
+                $("#city option:gt(0)").remove();
+                console.log(data);
+                var sttr="";
+                $.each(data,function (i,e) {
+                    sttr+="<option value="+e.id+">"+e.city+"</option>"
+                })
+                $("#city").append(sttr);
+            })
+        })
+        $("#city").change(function(){
+           /* $.ajax({
+                url: "select.php",
+                type: "get",
+                dataType: "json",
+                data: {flag: "3",
+                        cId:$(this).val(),
+                },
+                success: function (data) {
+                    $("#county option:gt(0)").remove();
+                    console.log(data);
+                    var sttr="";
+                    $.each(data,function (i,e) {
+                        sttr+="<option value="+e.id+">"+e.county+"</option>"
+                    })
+                    $("#county").append(sttr);
+                }
+            })*/
+            queryData({flag: "3",cId:$(this).val(),},function (data) {
+                $("#county option:gt(0)").remove();
+                console.log(data);
+                var sttr="";
+                $.each(data,function (i,e) {
+                    sttr+="<option value="+e.id+">"+e.county+"</option>"
+                })
+                $("#county").append(sttr);
+            })
+        })
+        /*http://apicloud.mob.com/appstore/lucky/mobile/query?key=1f8c0ceee942c&mobile=13816863588*/
+     $("#btn1").click(function(){
+        $.ajax({
+            url:"get_phone_info.php",
+            type: "get",
+            data:{mobile:$("#tel").val(),},
+            dataType:"json",
+            // jsonp:"cb",
+            success:function(data){
+                var res=data.result.conclusion;
+                $("#telresult").html(res);
+            }
+        })
+     })
+    $("#weather").change(function () {
+        $.ajax({
+            url: "citycode.php",
+            type: "get",
+            dataType: "json",
+            data:{cityName: $(this).val()},
+            success: function (data) {
+                console.log(data);
+               $("#btn2").click(function () {
+                   $.ajax({
+                       url: "cityweather.php",
+                       type:"get",
+                       dataType: "json",
+                       data:{cityCode: data.cityCode},
+                       success: function (data) {
+                           console.log(data)
+                           var html=template("tem-weather",data.retData);
+                           console.log(data.retData);
+                           var wearesult=document.getElementById("weatherresult");
+                           wearesult.innerHTML=html;
+                       }
+                   })
+               })
+            }
+        })
+    })
+
+
+    })
+</script>
+</body>
+</html>
