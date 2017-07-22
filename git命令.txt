@@ -41,11 +41,11 @@ git init
 
 git add --all 
 
-git commit -m"备注名"
+git commit -m"省市县联动/手机号查吉凶/事例城市天气"
 
-git pull --rebase 你的仓库地址 master
+git pull --rebase https://github.com/superwzx2311010/progects.git master
 
-git push 你的仓库地址 master
+git push https://github.com/superwzx2311010/progects.git master
 
 
 
