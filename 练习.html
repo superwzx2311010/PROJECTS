@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title></title>
+          <style>
+              canvas {
+                  border:1px solid black;
+              }
+          </style>
+      </head>
+      <body>
+          <canvas width="1000" height="1000" id="cas"></canvas>
+      </body>
+      <script>
+          var cas = document.getElementById( 'cas' );
+      
+          var ctx = cas.getContext( '2d' );
+      
+          // console.log(ctx);
+      
+          // ctx.moveTo( 100, 100 ); // 把笔放在那里
+          // ctx.lineTo( 200, 100 ); // 从刚才的位置, 绘制到哪里
+      
+      
+          // ctx.stroke();  // 描边绘图, 可以看到效果
+           var stepX=10;
+           var stepY=10*2/3;
+    var startX=0;
+    var  startY=0;
+    ctx.moveTo( 0, 0 );
+    while(true){
+        if(startX>=600)
+            break;
+        
+        
+        ctx.moveTo(startX,startY);
+        startX+=stepX;
+        startY+=stepY;
+        ctx.lineTo(startX,startY);
+        startX+=stepX;
+        startY+=stepY;
+    }
+    ctx.stroke();
+
+        ctx.moveTo( 100, 100 ); 
+        ctx.lineTo( 200, 100 );
+        ctx.lineTo( 200, 200 );
+        ctx.lineTo( 100, 200 );
+
+        ctx.moveTo( 300, 100 ); 
+        ctx.lineTo( 400, 100 );
+        ctx.lineTo( 400, 200 );
+
+
+        ctx.moveTo( 600, 600 );
+        ctx.lineTo( 700, 600 );
+        ctx.lineTo( 650, 510 );
+        ctx.moveTo( 600, 540 );
+        ctx.lineTo( 650, 630 );
+        ctx.lineTo( 700, 540 );
+
+        ctx.moveTo( 300, 600 );
+        ctx.lineTo( 400, 600 );
+        ctx.lineTo( 350, 510 );
+        ctx.moveTo( 300, 540 );
+        
+        ctx.lineTo( 400, 540 );
+        ctx.lineTo( 350, 630 );
+      ctx.fill();
+      ctx.moveTo(100,500);
+      ctx.lineTo(100,600);
+      ctx.lineTo(200,600);
+
+      ctx.moveTo(300.200);
+      ctx.lineTo()
+      ctx.closePath();
+      ctx.stroke();
+      </script>
+      </html>      
