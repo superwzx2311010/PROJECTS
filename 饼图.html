@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="400" id="cas"></canvas>
+</body>
+<script>
+    var cas = document.getElementById( 'cas' );
+
+    var ctx = cas.getContext( '2d' );
+
+    // console.log(ctx);
+
+    // ctx.moveTo( 100, 100 ); // 把笔放在那里
+    // ctx.lineTo( 200, 100 ); // 从刚才的位置, 绘制到哪里
+
+
+    // ctx.stroke();  // 描边绘图, 可以看到效果
+    function toAngle(radian) {
+        return radian * 180 / Math.PI;
+    }
+
+    function toRadian(angle) {
+        return angle * Math.PI / 180;
+    }
+    var colors = "crimson,cyan,darkblue,darkcyan,darkgoldenrod,darkgray,darkgreen,darkgrey,darkkhaki,darkmagenta".split(',');
+
+    var data = [{
+            num: 11231,
+            name: "淘宝"
+        },
+        {
+            num: 22673,
+            name: "京东"
+        },
+        {
+            num: 6123,
+            name: "唯品会"
+        },
+        {
+            num: 8989,
+            name: "1号店"
+        },
+        {
+            num: 6700,
+            name: "聚美优品"
+        }
+    ];
+    var total=0;
+    data.forEach(function(v){
+        total+=v["num"];
+    })
+    //console.log(total);
+    var maxNum=Math.max.apply(null,data.map(function(v,i){
+        return v["num"];
+    }))
+
+    //准备基础数据
+
+    var startAngle=-90;
+    var radius=100;
+    var newData=data.map(function(v,i){
+        v["startAngle"]=startAngle;
+        v["endAngle"]=startAngle+=v.num/total*360;
+        v["color"]=colors[i];
+        v['radius']=radius;
+        console.log(v);
+        return v;
+    })
+        //绘制扇形
+    var circleX=cas.width/2,
+        circleY=cas.height/2;
+    newData.forEach(function(v,i){
+        ctx.fillStyle=v.color;
+        ctx.beginPath();
+        ctx.moveTo(circleX,circleY);
+        ctx.arc(circleX,circleY,radius,toRadian(v.startAngle),toRadian(v.endAngle))
+        ctx.fill();
+
+        //绘制文字引线
+
+        ctx.beginPath();
+        var line1=v.radius+50;
+        ctx.strokeStyle=v.color;
+        var lineAngle=v.startAngle+(v.endAngle-v.startAngle)/2;
+        var line1X=line1*Math.cos(toRadian(lineAngle))+circleX;    
+        var line1Y=line1*Math.sin(toRadian(lineAngle))+circleY; 
+        var textpadding=10;
+        var dec=v.name+(v.num/total*360*100).toFixed(2)+"%("+v.num+"元)";
+        var decWidth=ctx.measureText(dec).width+2*textpadding;
+        var line2=decWidth;
+        var textDir=null;
+        if(lineAngle>-90&&lineAngle<90){
+            line2X=line1X+line2;
+            line2Y=line1Y;
+            textDir="right";
+        }else{
+            line2X=line1X-line2;
+            line2Y=line1Y;
+            textDir="left";
+
+        }
+        ctx.moveTo(circleX,circleY);
+        ctx.lineTo(line1X,line1Y);
+        ctx.lineTo(line2X,line2Y);
+
+        ctx.stroke();  
+
+        //填充文字
+        
+        console.log(dec);
+        
+        if(textDir=="right"){
+            ctx.fillText(dec,line1X+textpadding,line1Y-textpadding)
+        }else if(textDir=="left"){
+            ctx.fillText(dec,line2X+textpadding,line2Y-textpadding)
+        }
+
+
+
+    })
+</script>
+</html>
