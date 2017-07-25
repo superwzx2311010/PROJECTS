@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <canvas  id="cas"></canvas>
+</body>
+<script>
+
+    var cas = document.getElementById( 'cas' );
+    cas.width=window.innerWidth;
+    cas.height=window.innerHeight;
+    var ctx = cas.getContext( '2d' );
+    function toAngle(radian) {
+        return radian * 180 / Math.PI;
+    }
+
+    function toRadian(angle) {
+        return angle * Math.PI / 180;
+    }
+    function Circle(config){
+        this.ctx=ctx;
+        this.x=config.x;
+        this.y=config.y;
+        this.startAngle=config.startAngle;
+        this.endAngle=config.endAngle;
+        this.radius=config.radius;
+
+        this.direction=config.direction;
+        this.lineWidth = config.lineWidth;
+        this.strokeStyle = config.strokeStyle;
+        this.fillStyle = config.fillStyle;
+    }
+    Circle.prototype={
+        constructor: Circle,
+        
+        stroke:function(){
+            var ctx=this.ctx;
+            ctx.width=this.width;
+            
+            if(this.strokeStyle){
+                ctx.strokeStyle=this.strokeStyle;
+            }
+            if(this.lineWidth){
+                ctx.lineWidth=this.lineWidth;
+            }
+            if(this.direction==true){
+                ctx.beginPath();
+                ctx.moveTo(this.x,this.y);
+                ctx.arc(this.x,this.y,this.radius,toRadian(this.startAngle),toRadian(this.endAngle),true)
+                ctx.closePath();
+            }else{
+                ctx.beginPath();
+                ctx.moveTo(this.x,this.y);
+                ctx.arc(this.x,this.y,this.radius,toRadian(this.startAngle),toRadian(this.endAngle));
+                ctx.closePath();
+            }
+
+            ctx.stroke();
+        },
+        fill:function(){
+            var ctx=this.ctx;
+            ctx.width=this.width;
+            
+            if(this.fillStyle){
+                ctx.fillStyle=this.fillStyle;
+            }
+            if(this.direction==true){
+                ctx.beginPath();
+                ctx.moveTo(this.x,this.y);
+                ctx.arc(this.x,this.y,this.radius,toRadian(this.startAngle),toRadian(this.endAngle),true);
+                ctx.closePath();
+            }else{
+                ctx.beginPath();
+                ctx.moveTo(this.x,this.y);
+                ctx.arc(this.x,this.y,this.radius,toRadian(this.startAngle),toRadian(this.endAngle))
+                ctx.closePath();
+            }
+
+            ctx.fill();
+        },
+    }
+    //**************************************示例************************************************
+    var a=new Circle({ //--------------圆弧参数说明-------------------
+        // ctx:ctx,                          //canvas 的2d画笔
+        x:100,                           // 圆弧中心x坐标  单位:px
+        y:100,                           //圆弧中心y坐标   单位:px
+        radius:100,                      //圆弧半径        单位:px
+        startAngle:20,                   //起始角度        单位:度
+        endAngle:111,                    //终了角度        单位:度
+        fillStyle: "red",                //填充样式
+        direction:true ,
+
+    });
+    a.fill();
+    var b=new Circle({
+        ctx:ctx,                          //canvas 的2d画笔
+        x:400,                           // 圆弧中心x坐标  单位:px
+        y:400,                           //圆弧中心y坐标   单位:px
+        radius:100,                      //圆弧半径        单位:px
+        startAngle:80,                   //起始角度        单位:度
+        endAngle:141,                    //终了角度        单位:度
+        fillStyle: "red",                //填充样式
+        lineWidth:10,                    //线宽            单位:px
+        direction:true,  
+    })
+    b.stroke();
+</script>
+</html>
