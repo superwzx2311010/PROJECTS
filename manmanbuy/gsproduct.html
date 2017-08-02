@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="shop-template">
+        {{each result as value i}}
+        <div class="shop-item" data-shop-id={{value.shopId}}>{{value.shopName}}</div>
+        {{/each}}
+    </script>
+    <script type=text/html id="area-template">
+        {{each result as value i}}
+        <div class="area-item" data-area-id={{value.areaId}}>{{value.areaName}}</div>
+        {{/each}}
+    </script>
+    <script type=text/html id="gsproduct-list-template">
+        {{each result as value i}}
+        <div class="gsproduct">
+            <div class="gsproduct-item">
+                <img src={{value.productImg}} alt="">
+                <div class="title">{{value.productName}}</div>
+                <div class="price">{{value.productPrice}}</div>
+            </div>
+        </div>
+        {{/each}}
+</script>
+    <title>凑单品</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/gsproduct.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header" class="back"></header>
+
+<!--商品列表 -->
+<section id="gsproduct-list">
+    <div class="gsproduct-title">
+        <div class="shop">京东商城</div>
+        <div class="area">华北</div>
+    </div>
+    <div class="shop-list"></div>
+    <div class="area-list"></div>
+
+    <div class="gsproduct-container"></div>
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/gsproduct.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

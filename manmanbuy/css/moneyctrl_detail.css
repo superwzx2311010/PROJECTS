@@ -1,0 +1,80 @@
+#moneyctrl_detail {
+  padding: 10px;
+}
+#moneyctrl_detail .product .product-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+#moneyctrl_detail .product .product-price {
+  color: #ff6c00;
+  font-size: 16px;
+  padding: 5px;
+}
+#moneyctrl_detail .product .product-from {
+  color: #999;
+  padding: 5px;
+}
+#moneyctrl_detail .product .product-des {
+  text-align: center;
+}
+#moneyctrl_detail .product .product-des .media .media-body {
+  padding: 0;
+  margin: 0;
+}
+#moneyctrl_detail .product .product-des .media .media-body p {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+#moneyctrl_detail .product .product-des .media .media-right a img {
+  width: 120px;
+  height: 120px;
+}
+#moneyctrl_detail .product .product-des > img {
+  width: 220px;
+  height: 220px;
+}
+#moneyctrl_detail .product .product-des .buy {
+  margin: 20px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  background-color: #ff9000;
+  border-radius: 5px;
+}
+#moneyctrl_detail .product-ew {
+  width: 100%;
+}
+#moneyctrl_detail .comment .title {
+  line-height: 45px;
+  padding-left: 10px;
+}
+#moneyctrl_detail .comment form {
+  margin: 10px;
+  position: relative;
+}
+#moneyctrl_detail .comment form textarea {
+  width: 100%;
+  outline: none;
+  focus: none;
+  border: 3px solid #eceae8;
+  border-radius: 3px;
+}
+#moneyctrl_detail .comment form input {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #ff841d;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  border: 0;
+  outline: none;
+  border-radius: 3px;
+  color: #fff;
+}
+#moneyctrl_detail .comment .new {
+  line-height: 45px;
+  padding-left: 10px;
+}

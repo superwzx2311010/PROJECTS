@@ -1,0 +1,102 @@
+#menu {
+  margin: 10px;
+  border: 0;
+}
+#menu > .row {
+  margin: 0;
+  overflow: hidden;
+}
+#menu > .row > .col-xs-3 {
+  text-align: center;
+  padding: 0;
+  min-height: 0;
+  transition: height 1s;
+}
+#menu > .row > .col-xs-3 a {
+  display: block;
+  text-decoration: none;
+}
+#menu > .row > .col-xs-3 a img {
+  width: 50px;
+  height: 50px;
+}
+#menu > .row > .col-xs-3 a h4 {
+  text-align: center;
+  color: #5a5a5a;
+  font-size: 16px;
+}
+#recommend .recommend-tit {
+  height: 35px;
+  background-color: #ff841d;
+}
+#recommend .recommend-tit > a {
+  padding: 0 10px;
+  display: block;
+  font-size: 18px;
+  line-height: 35px;
+  color: #fff;
+  text-decoration: none;
+}
+#recommend .recommend-tit > a:before {
+  content: "";
+  width: 23px;
+  height: 23px;
+  float: right;
+  background-image: url("../images/more.png");
+  background-size: 23px 23px ;
+  margin-top: 6px;
+}
+#recommend .recommend-list {
+  padding: 10px;
+}
+#recommend .recommend-list > .media > .media-left > a > img {
+  width: 99px;
+  height: 100px;
+}
+#recommend .recommend-list > .media > .media-body {
+  position: relative;
+}
+#recommend .recommend-list > .media > .media-body .product-info .title {
+  font-size: 18px;
+  color: #333;
+}
+#recommend .recommend-list > .media > .media-body .product-info .price {
+  font-size: 18px;
+  color: red;
+}
+#recommend .recommend-list > .media > .media-body .other-info {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 5px;
+}
+#recommend .recommend-list > .media > .media-body .other-info .words {
+  float: right;
+}
+#recommend .recommend-list > .media > .media-body .other-info .words:after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 80px;
+  background-image: url("../images/ic_comment.png");
+  background-size: 15px 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#recommend .recommend-others {
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+#recommend .recommend-others a {
+  display: block;
+  height: 30px;
+  color: #5a5a5a;
+  border-radius: 5px;
+  border: 1px solid #5a5a5a;
+  text-align: center;
+  line-height: 30px;
+  margin: 20px;
+  background-color: #f8f8f8;
+  text-decoration: none;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="baicai-title-template">
+        {{each result as value i}}
+        <li><a href="#" data-title-id={{value.titleId}}>{{value.title}}</a></li>
+        {{/each}}
+    </script>
+    <script type=text/html id="baicai-prodect-template">
+        {{each result as value i}}
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    {{#value.productImg}}
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{#value.productName}}</h4>
+                <div class="price">
+                    <span>{{#value.productPrice}}</span>
+                </div>
+                <div class="link">
+                    <span>{{#value.productCoupon}}</span>
+                    {{#value.productHref}}
+                </div>
+                <div class="des">{{#value.productCouponRemain}}</div>
+            </div>
+        </div>
+        {{/each}}
+</script>
+    <title>白菜价</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/baicaijia.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header"></header>
+<!-- 产品区域 -->
+<section id="prodect">
+    <div class="prodect-title">
+        <ul class="prodect-nav">
+        </ul>
+    </div>
+    <div class="prodect-list">
+         <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="images/product_info.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">名称</h4>
+                    <div class="price">
+                        <span>卷后￥</span>
+                        <span>49.9</span>
+                        <del>￥22.5</del>
+                    </div>
+                    <div class="link">
+                        <span>100元优惠卷</span>
+                        <a href="#">领卷下单</a>
+                    </div>
+                    <div class="des">以领取1234张</div>
+                </div>
+            </div>
+    </div>
+</section>
+
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/baicaijia.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

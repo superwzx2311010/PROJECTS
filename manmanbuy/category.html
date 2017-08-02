@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="category-template" >
+        {{each result as value i}}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading{{i}}">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                       href="#collapse{{i}}" aria-expanded="false" aria-controls="collapseTwo" data-my-title-id={{value.titleId}}>
+                        {{value.title}}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{i}}">
+                <div class="panel-body"></div>
+            </div>
+        </div>
+        {{/each}}
+</script>
+    <script type=text/html id="chlid-category-template">
+        <div class="row">
+            {{each result as value i}}
+            <div class="col-xs-4"><a href="category_product_list.html?categoryid={{value.categoryId}}">{{value.category}}</a></div>
+            {{/each}}
+        </div>
+</script>
+    <title>慢慢买商品分类</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header"></header>
+<!-- 搜索区域 -->
+<section id="search"></section>
+<!-- 菜单区域 -->
+<section id="category">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        标题2
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        标题3
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    内容3
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/category.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

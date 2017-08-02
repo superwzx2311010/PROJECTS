@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="list-template">
+
+        {{each result as value i}}
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    {{#value.productImgSm}}
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="product-info">
+                    <span class="title">{{value.productName}}</span>
+                    <span class="price">{{value.productPinkage}}</span>
+                </div>
+                <div class="other-info">
+                    <span class="from">{{value.productFrom}}|{{value.productTime}}</span>
+                    <span class="words">{{value.productComCount}}</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+
+
+    </script>
+    <title>省钱控</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/moneyctrl.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header" class="back"></header>
+    <!-- 搜索区域 -->
+    <section id="search"></section>
+    <!-- 列表区域 -->
+    <section id="prodact-list">
+    <div class="more"></div>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer"></footer>
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
+    <script src="libs/template/template.js"></script>
+    <script src=js/moneyctrl.js></script>
+    <script src=js/common_section.js></script>
+</body>
+</html>

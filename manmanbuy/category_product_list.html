@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="category-prodect-list-complate">
+        {{each result as value i}}
+        <div class="media">
+            <div class="media-left">
+                <a href="category_product_detail.html?productid={{value.productId}}">
+                    {{#value.productImg}}
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="product-info">
+                    <span class="title">{{value.productName}}</span>
+                    <div class="price">{{pagesize}}{{value.productPrice}}</div>
+                </div>
+                <div class="other-info">
+                    <span class="from">{{value.productQuote}}</span>
+                    <span class="words">{{value.productCom}}</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </script>
+    <title>慢慢买</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/category_product_list.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header"></header>
+<!-- 搜索区域 -->
+<section id="search"></section>
+<!-- 商品列表 -->
+<section id="category-prodect-list">
+    <div class="category-prodect-list-container"></div>
+    <nav class="category-prodect-list-next">
+        <ul class="pager">
+            <li class="previous disabled"><a href="#"><span aria-hidden="false">&larr;</span>上一页</a></li>
+            <li>
+                <select name="" id="select">
+                    <!--<option value="">第1页/共2页</option>-->
+                    <!--<option value="">第1页/共2页</option>-->
+                </select>
+            </li>
+            <li class="next"><a href="#">下一页<span aria-hidden="false">&rarr;</span></a></li>
+        </ul>
+    </nav>
+
+
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/category_product_list.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

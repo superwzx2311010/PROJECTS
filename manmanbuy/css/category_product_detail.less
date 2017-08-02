@@ -1,0 +1,140 @@
+@import "color";
+#category_product_detail{
+  nav{
+    .breadcrumb{
+      li+li:before{
+        content: ">";
+      }
+    }
+  }
+  .prodect{
+    text-align: center;
+    position: relative;
+    .prodect-des{
+      padding:10px;
+      img{
+        width: 160px;
+        height: 160px;
+      }
+      >a{
+        width:40px;
+        height: 40px;
+        position: absolute;
+        border-radius: 20px;
+        background-color: #8bca00;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        right: 15%;
+      }
+    }
+    .bjShop{
+      background-color: #f2f2f2;
+      padding-top: 19px;
+      >.bj-title{
+        height: 35px;
+        background-color:@baseColor;
+        text-align: center;
+        line-height: 35px;
+        color: #fff;
+        position: relative;
+      }
+      .bj-title:before{
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 5px;
+        background-image: url("../images/tab_ar.png");
+        background-size:12px 5px ;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      >.bj-tb{
+        padding: 10px;
+        >table{
+          >tbody{
+            >tr{
+              .p_pic{
+                a{
+                  img{
+                    width: 14px;
+                    height: 14px;
+                  }
+                }
+              }
+              >td:nth-of-type(2){
+                a{
+                  color: #5a5a5a;
+                }
+              }
+              >td:nth-of-type(3){
+
+                  color: red;
+
+              }
+            }
+          }
+        }
+      }
+      >.explain{
+        padding: 10px;
+        color: #888;
+        font-size: 11px;
+      }
+    }
+  }
+  .assess{
+    border-bottom: 1px solid @borderColor;
+      >.assess-title{
+       height: 35px;
+       background-color: #dbdbdb;
+       border-top: 4px solid #7a7a7a;
+       text-align: center;
+       line-height: 35px;
+     }
+      >.assess-conner{
+        padding: 10px;
+          >.time{
+            color: #99999c;
+              >span:nth-of-type(1){
+                font-size: 14px;
+              }
+              >span:nth-of-type(2){
+                font-size: 12px;
+                float:right;
+              }
+          }
+          >.from{
+            color: #666;
+          }
+          >.words{
+            padding: 5px 0;
+            font-size: 15px;
+          }
+          >.replay{
+            color: #999;
+          }
+    }
+      >.assess-more{
+          text-align: center;
+          line-height: 35px;
+          background-color: #e6e6e6;
+          color: #5a5a5a;
+          border: 1px solid #d2d2d2;
+          border-radius: 5px;
+          margin:10px ;
+      }
+      >.assess-none{
+      text-align: center;
+      line-height: 35px;
+      background-color: #e6e6e6;
+      color: #5a5a5a;
+      border: 1px solid #d2d2d2;
+      border-radius: 5px;
+      margin:10px ;
+      display: none;
+    }
+  }
+
+}

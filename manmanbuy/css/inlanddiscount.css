@@ -1,0 +1,45 @@
+#prodect .prodect-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+#prodect .prodect-list .prodect-item {
+  text-align: center;
+  padding: 20px;
+  width: 50%;
+}
+#prodect .prodect-list .prodect-item img {
+  width: 140px;
+  height: 140px;
+}
+#prodect .prodect-list .prodect-item .prodect-name {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  height: 44px;
+  overflow: hidden;
+}
+#prodect .prodect-list .prodect-item .prodect-price {
+  color: #ff871f;
+  font-size: 16px;
+  text-align: left;
+  height: 22px;
+  overflow: hidden;
+}
+#prodect .prodect-list .prodect-item .prodect-from {
+  color: #a1a1a1;
+  text-align: left;
+}
+#prodect .prodect-list .prodect-item .prodect-time {
+  color: #a1a1a1;
+  text-align: left;
+}
+#prodect .loading-info {
+  text-align: center;
+}
+#prodect .loading-info > img {
+  width: 35px;
+  height: 35px;
+}
+#prodect .loading-info > .loading-over {
+  display: none;
+}

@@ -1,0 +1,70 @@
+@import "color";
+#category-prodect-list{
+    padding: 10px;
+  .category-prodect-list-container{
+        .media{
+      >.media-left{
+        >a{
+          >img{
+            width: 99px;
+            height: 100px;
+
+          }
+        }
+      }
+      >.media-body{
+        position: relative;
+
+        .product-info{
+          .title{
+            font-size: 18px;
+            color: #333;
+            height: 45px;
+            overflow: hidden;
+            display: block;
+          }
+          .price{
+            font-size: 18px;
+            color: red;
+          }
+        }
+        .other-info{
+          position: absolute;
+          bottom: 10px;
+          width: 100%;
+          padding: 0 5px;
+          .from{
+
+          }
+          .words{
+            float: right;
+          }
+        }
+      }
+    }
+  }
+  .category-prodect-list-next{
+    margin:0 40px;
+    .pager{
+      li{
+        #select{
+          width: 105px;
+          height: 32px;
+          border-radius: 16px;
+          border-color:@borderColor;
+          .option{
+            text-align: center;
+            //width: 100px;
+          }
+        }
+      }
+      .previous{
+        a{
+          //color:black;
+        }
+      }
+    }
+
+  }
+
+}

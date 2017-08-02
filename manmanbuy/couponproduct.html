@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="couponproduct-list-template">
+        {{each result as value i}}
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    {{#value.couponProductImg}}
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{value.couponProductName}}</h4>
+                <div class="price">{{value.couponProductPrice}}</div>
+                <div class="date">{{value.couponProductTime}}</div>
+            </div>
+        </div>
+        {{/each}}
+</script>
+    <title>商品内部优惠卷</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/couponproduct.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header" class="back"></header>
+<!-- 列表区域 -->
+<section id="couponproduct-list">
+    <div class="couponproduct-title">--点餐前出示手中的优惠卷,即可享受优惠--</div>
+    <div class="couponproduct-container">
+    </div>
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/couponproduct.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

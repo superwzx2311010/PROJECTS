@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="sitenav-template">
+        {{each result as value i}}
+        <a href={{value.navHref}} >
+            <img src={{value.navImg}} alt="">
+            {{value.navTitle}}
+        </a>
+        {{/each}}
+    </script>
+    <title>商城导航</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/sitenav.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header" class="back"></header>
+
+<!-- 商城列表 -->
+<section id="sitenav">
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东dasf商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东商fads城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东fdsaadf商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东fadf商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东fdsasfdsa商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东fdas商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东a商城</span></a>-->
+    <!--<a href=""><img src="images/jd.png" alt=""><span>京东商城</span></a>-->
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/sitenav.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

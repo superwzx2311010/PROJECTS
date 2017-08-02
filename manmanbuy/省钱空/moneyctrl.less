@@ -1,0 +1,56 @@
+@import "color";
+#prodact-list{
+  padding: 10px;
+  >.media{
+    >.media-left{
+      >a{
+        >img{
+          width: 99px;
+          height: 100px;
+
+        }
+      }
+    }
+    >.media-body{
+      position: relative;
+
+      .product-info{
+        .title{
+          font-size: 18px;
+          color: #333;
+        }
+        .price{
+          font-size: 18px;
+          color: red;
+        }
+      }
+      .other-info{
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        padding: 0 5px;
+        .from{
+
+        }
+        .words{
+          float: right;
+        }
+        .words:after{
+          content: "";
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          right: 80px;
+          background-image: url("../images/ic_comment.png");
+          background-size: 15px 15px;
+          top:50%;
+          transform: translateY(-50%);
+
+        }
+      }
+    }
+  }
+  >.more{
+    
+  }
+}

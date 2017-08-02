@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="bj-prodectDes-template">
+        <div class="prodect-des">
+            {{#result[0].productImg}}
+            <a href="#">收藏</a>
+            <div class="title">{{result[0].productName}}</div>
+        </div>
+        <div class="bjShop">
+            <div class="bj-title">比价购买</div>
+            <div class="bj-tb">
+                {{#result[0].bjShop}}
+            </div>
+            <div class="explain">*实际价格以各网站列出的实时售价为准,我们提供的价格可能有数小时或者数日的延迟</div>
+        </div>
+</script>
+    <script type=text/html id="assess1-template">
+        {{each result1 as value i}}
+        <div class="time">
+            <span>{{value.comName}}</span>
+            <span>{{value.comTime}}</span>
+        </div>
+        <div class="from">{{value.comFrom}}</div>
+        <div class="words">{{value.comContent}}</div>
+        <a class="replay">回复</a>
+         {{/each}}
+    </script>
+    <script type=text/html id="assess2-template">
+        {{each result2 as value i}}
+        <div class="time">
+            <span>{{value.comName}}</span>
+            <span>{{value.comTime}}</span>
+        </div>
+        <div class="from">{{value.comFrom}}</div>
+        <div class="words">{{value.comContent}}</div>
+        <a class="replay">回复</a>
+        {{/each}}
+    </script>
+    <title>慢慢买</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/category_product_detail.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header"></header>
+<!-- 搜索区域 -->
+<section id="search"></section>
+<!-- 详情区域 -->
+<section id="category_product_detail">
+    <nav>
+        <ol class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
+
+        </ol>
+    </nav>
+    <div class="prodect">
+
+    </div>
+    <div class="assess">
+        <div class="assess-title">优选网友评价</div>
+        <div class="assess-conner">
+
+        </div>
+        <div class="assess-more">查看更多评价</div>
+        <div class="assess-none">没有更多评论了</div>
+    </div>
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/category_product_detail.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

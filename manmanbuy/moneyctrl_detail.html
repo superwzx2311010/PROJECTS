@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="moneyctrl-detail-template">
+        <div class="product-title">{{result[0].productName}}</div>
+        <div class="product-price">{{result[0].productPinkage}}</div>
+        <div class="product-from">{{result[0].productFrom}}</div>
+        <div class="product-des">
+            <div class="media">
+                <div class="media-body">
+                    <p>{{result[0].productInfo2}}</p>
+                </div>
+                <div class="media-right">
+                    <a href="#">
+                        {{#result[0].productImgSm}}
+                    </a>
+                </div>
+            </div>
+            {{#result[0].productImg2}}
+            <div class="buy">前往购买</div>
+        </div>
+</script>
+    <title>省钱控商品详情</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/moneyctrl_detail.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header" class=back></header>
+<!-- 详情区域 -->
+<section id="moneyctrl_detail">
+    <div class="product">
+
+    </div>
+
+    <img src="images/mmbweixin2.png" alt="" class="product-ew">
+    <div class="comment">
+        <div class="title">发表评论</div>
+        <form action="">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="发表评论">
+        </form>
+        <div class="new">最新评论</div>
+    </div>
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/moneyctrl_detail.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

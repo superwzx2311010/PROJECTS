@@ -1,0 +1,104 @@
+#prodect{
+  >.prodect-title{
+    height: 50px;
+    overflow: hidden;
+    >ul{
+      list-style: none;
+      width: 1000px;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      left:0;
+      height: 50px;
+      background-color: pink;
+      >li{
+        float: left;
+        a{
+          padding: 15px;
+          height: 50px;
+          line-height: 50px;
+          font-size: 16px;
+          text-align: center;
+          text-decoration: none;
+          position: relative;
+        }
+        a.checked:before{
+          content: "";
+          width: 40px;
+          height: 3px;
+          position: absolute;
+          background-color:red;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        a.checked{
+          color: red;
+        }
+      }
+    }
+  }
+  >.prodect-list{
+    >.media{
+      padding: 10px;
+      >.media-left{
+        a{
+          img{
+            width: 130px;
+            height: 130px;
+          }
+        }
+      }
+      >.media-body{
+        >.price{
+          >span{
+            color: red;
+            font-size: 18px;
+            font-weight: 700;
+            i{
+              color: red;
+              font-size: 14px;
+              padding: 0 5px;
+            }
+            em{
+              padding: 0 5px;
+            }
+            del{
+              color: #ccc;
+              font-size: 12px;
+            }
+          }
+        }
+        >.link{
+          //height: 45px;
+          >span{
+              >a{
+                padding: 5px;
+                color: red;
+                border: 1px dashed red;
+                line-height: 45px;
+              }
+
+
+          }
+          >a{
+            display: block;
+            padding: 5px;
+            width: 70px;
+            text-align: center;
+            height: 40px;
+            line-height: 30px;
+            background-color: #ff5e5d ;
+            color: #fff;
+            border-radius: 3px;
+            float: right;
+          }
+        }
+        >.des{
+          color: #666;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="menu-template">
+        {{each result as value i}}
+        <div class="col-xs-3">
+            <a href="{{value.titlehref}}">
+                {{#value.img}}
+                <p>{{value.name}}</p>
+            </a>
+        </div>
+        {{/each}}
+</script>
+    <script type=text/html id="list-template">
+
+        {{each result as value i}}
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                   {{#value.productImgSm}}
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="product-info">
+                    <span class="title">{{value.productName}}</span>
+                    <span class="price">{{value.productPinkage}}</span>
+                </div>
+                <div class="other-info">
+                    <span class="from">{{value.productFrom}}|{{value.productTime}}</span>
+                    <span class="words">{{value.productComCount}}</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+
+
+</script>
+    <title>慢慢买</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header"></header>
+<!-- 搜索区域 -->
+<section id="search"></section>
+<!-- 菜单区域 -->
+<section id="menu">
+    <div class="row">
+    </div>
+</section>
+<!-- 推荐区域 -->
+<section id="recommend">
+    <div class="recommend-tit">
+        <a href="#">超级折扣推荐</a>
+    </div>
+    <div class="recommend-list">
+
+
+    </div>
+    <div class="recommend-others">
+        <a href="#">更多优惠>></a>
+    </div>
+    <div class="recommend-tit">
+        <a href="#">品牌排行</a>
+    </div>
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/index.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

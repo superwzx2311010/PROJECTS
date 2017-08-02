@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="prodect-list-template">
+
+            {{each result as value i}}
+         <div class="prodect-item">
+            {{#value.productImgSm}}
+            <div class="prodect-name">{{value.productName}}</div>
+            <div class="prodect-price">{{value.productPinkage}}</div>
+            <div class="prodect-from">{{value.productFrom}}</div>
+            <div class="prodect-time">{{value.productTime}}</div>
+        </div>
+            {{/each}}
+
+
+    </script>
+    <title>国内折扣</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/inlanddiscount.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header" class="back"></header>
+
+<!-- 商品区域 -->
+<section id="prodect">
+    <div class="prodect-list">
+
+    </div>
+    <div class="loading-info">
+        <img src="images/loading.gif" alt="">
+        <div class="loading-over">全部商品已加载完成</div>
+    </div>
+</section>
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/inlanddiscount.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

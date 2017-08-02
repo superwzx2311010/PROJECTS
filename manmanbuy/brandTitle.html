@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="brand-list-template">
+        {{each result as value i}}
+        <a href="brandproductlist.html?brandTitleId={{value.brandTitleId}}">{{value.brandTitle}}</a>
+        {{/each}}
+</script>
+    <title>品牌大全</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/brandTitle.css">
+    <link rel="stylesheet" href="css/common_section.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header id="header"></header>
+<!-- 搜索区域 -->
+<section id="search"></section>
+<!-- 列表区域 -->
+<section id="brand-title">
+    <div class="brand-nav">
+        <a href="index.html">首页</a>
+        >品牌大全
+    </div>
+    <div class="brand-title">热门品牌排行</div>
+    <div class="brand-list">
+        <a href="">平板电视十大排行</a>
+        <a href="">平板电视十大排行</a>
+        <a href="">平板电视十大排行</a>
+        <a href="">平板电视十大排行</a>
+        <a href="">平板电视十大排行</a>
+    </div>
+</section>
+
+<!-- 底部区域 -->
+<footer id="footer"></footer>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="libs/template/template.js"></script>
+<script src=js/brandTitle.js></script>
+<script src=js/common_section.js></script>
+</body>
+</html>

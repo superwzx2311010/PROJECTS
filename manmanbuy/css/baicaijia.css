@@ -1,0 +1,85 @@
+#prodect > .prodect-title {
+  height: 50px;
+  overflow: hidden;
+}
+#prodect > .prodect-title > ul {
+  list-style: none;
+  width: 1000px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 0;
+  height: 50px;
+  background-color: pink;
+}
+#prodect > .prodect-title > ul > li {
+  float: left;
+}
+#prodect > .prodect-title > ul > li a {
+  padding: 15px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+}
+#prodect > .prodect-title > ul > li a.checked:before {
+  content: "";
+  width: 40px;
+  height: 3px;
+  position: absolute;
+  background-color: red;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#prodect > .prodect-title > ul > li a.checked {
+  color: red;
+}
+#prodect > .prodect-list > .media {
+  padding: 10px;
+}
+#prodect > .prodect-list > .media > .media-left a img {
+  width: 130px;
+  height: 130px;
+}
+#prodect > .prodect-list > .media > .media-body > .price > span {
+  color: red;
+  font-size: 18px;
+  font-weight: 700;
+}
+#prodect > .prodect-list > .media > .media-body > .price > span i {
+  color: red;
+  font-size: 14px;
+  padding: 0 5px;
+}
+#prodect > .prodect-list > .media > .media-body > .price > span em {
+  padding: 0 5px;
+}
+#prodect > .prodect-list > .media > .media-body > .price > span del {
+  color: #ccc;
+  font-size: 12px;
+}
+#prodect > .prodect-list > .media > .media-body > .link > span > a {
+  padding: 5px;
+  color: red;
+  border: 1px dashed red;
+  line-height: 45px;
+}
+#prodect > .prodect-list > .media > .media-body > .link > a {
+  display: block;
+  padding: 5px;
+  width: 70px;
+  text-align: center;
+  height: 40px;
+  line-height: 30px;
+  background-color: #ff5e5d ;
+  color: #fff;
+  border-radius: 3px;
+  float: right;
+}
+#prodect > .prodect-list > .media > .media-body > .des {
+  color: #666;
+  font-size: 12px;
+}

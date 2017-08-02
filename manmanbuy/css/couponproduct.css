@@ -1,0 +1,22 @@
+#couponproduct-list .couponproduct-title {
+  text-align: center;
+  color: #ccc;
+  line-height: 40px;
+}
+#couponproduct-list .couponproduct-container {
+  padding: 10px;
+}
+#couponproduct-list .couponproduct-container .media .media-left a img {
+  width: 100px;
+  height: 100px;
+}
+#couponproduct-list .couponproduct-container .media .media-body {
+  padding: 0!important;
+}
+#couponproduct-list .couponproduct-container .media .media-body .price {
+  font-weight: 700;
+}
+#couponproduct-list .couponproduct-container .media .media-body .date {
+  color: #ff841d;
+  line-height: 40px;
+}
