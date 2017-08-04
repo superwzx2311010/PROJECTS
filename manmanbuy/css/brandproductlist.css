@@ -6,9 +6,11 @@
   line-height: 45px;
   padding-left: 20px;
 }
-#brandproductlist .brandproduct-title {
+#brandproductlist .brandproduct-title,
+#brandproductlist .brandproduct-title2,
+#brandproductlist .productcom-title {
   height: 45px;
-  margin: 10px;
+  width: 100%;
   line-height: 45px;
   background-color: #eee;
   color: #874604;
@@ -18,7 +20,6 @@
   padding-left: 20px;
 }
 #brandproductlist .brandproduct-list {
-  padding-bottom: 30px;
   background-color: #f2f2f2;
 }
 #brandproductlist .brandproduct-list a {
@@ -30,4 +31,110 @@
   border-bottom: 1px solid #ccc;
   text-decoration: none;
   color: #24272a;
+}
+#brandproductlist .brandproduct-list a span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #c9c9c9;
+  text-align: center;
+  line-height: 20px;
+  margin: 20px;
+  float: left;
+  color: #fff;
+  font-weight: 600;
+}
+#brandproductlist .brandproduct-list a .title {
+  font-size: 16px;
+  padding-top: 10px;
+}
+#brandproductlist .brandproduct-list a .des {
+  color: #999;
+}
+#brandproductlist .brandproduct-list a:nth-of-type(1) span {
+  background-color: #f10e0e;
+}
+#brandproductlist .brandproduct-list a:nth-of-type(2) span {
+  background-color: #ff9314;
+}
+#brandproductlist .brandproduct-list a:nth-of-type(3) span {
+  background-color: #8adf5b;
+}
+#brandproductlist .brandproduct-list a:before {
+  content: '';
+  width: 12px;
+  height: 18px;
+  background-image: url("../images/right.png");
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#brandproductlist .brandproduct-list2 .media {
+  padding: 10px;
+}
+#brandproductlist .brandproduct-list2 .media > .media-left > a > img {
+  width: 100px;
+  height: 100px;
+}
+#brandproductlist .brandproduct-list2 .media > .media-body {
+  position: relative;
+}
+#brandproductlist .brandproduct-list2 .media > .media-body .product-info .title {
+  font-size: 18px;
+  color: #333;
+  height: 45px;
+  overflow: hidden;
+  display: block;
+}
+#brandproductlist .brandproduct-list2 .media > .media-body .product-info .price {
+  font-size: 18px;
+  color: red;
+}
+#brandproductlist .brandproduct-list2 .media > .media-body .other-info {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 5px;
+}
+#brandproductlist .productcom {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+#brandproductlist .productcom .productcom-des .media {
+  padding: 10px;
+}
+#brandproductlist .productcom .productcom-des .media > .media-left > a > img {
+  width: 100px;
+  height: 100px;
+}
+#brandproductlist .productcom .productcom-des .media > .media-body {
+  position: relative;
+}
+#brandproductlist .productcom .productcom-des .media > .media-body .product-info .title {
+  font-size: 18px;
+  color: #333;
+  height: 50px;
+  display: block;
+  line-height: 40px;
+}
+#brandproductlist .productcom .productcom-words {
+  background-color: #fff;
+}
+#brandproductlist .productcom .productcom-words > .time {
+  color: #99999c;
+}
+#brandproductlist .productcom .productcom-words > .time > span:nth-of-type(1) {
+  font-size: 14px;
+}
+#brandproductlist .productcom .productcom-words > .time > span:nth-of-type(2) {
+  font-size: 12px;
+  float: right;
+}
+#brandproductlist .productcom .productcom-words > .words {
+  padding: 10px;
+  font-size: 15px;
+}
+#brandproductlist .productcom .productcom-words > .replay {
+  color: #999;
 }

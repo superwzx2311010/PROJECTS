@@ -4,10 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type=text/html id="prodect-list-template">
+        {{each result as value i}}
+        <a href="#">
+            <span>{{i+1}}</span>
+            <div class="title">{{value.brandName}}</div>
+            <div class="des">{{value.brandInfo}}</div>
+        </a>
+        {{/each}}
+    </script>
+    <script type=text/html id="product-list2-template">
+        {{each result as value i}}
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    {{#value.productImg}}
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="product-info">
+                    <span class="title">{{value.productName}}</span>
+                    <div class="price">{{value.productPrice}}</div>
+                </div>
+                <div class="other-info">
+                    <span class="from">{{value.productQuote}}</span>
+                    <span class="words">{{value.productCom}}</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+</script>
+    <script type=text/html id="product-list3-template">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                   {{#result[0].productImg}}
+                </a>
+            </div>
+            <div class="media-body">
+                <div class="product-info">
+                    <span class="title">{{result[0].productName}}</span>
+                </div>
+
+            </div>
+        </div>
+</script>
     <title>十大品牌列表</title>
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/brandproductlist.css">
     <link rel="stylesheet" href="css/common_section.css">
+    <!--<script src="js/index.js"></script>-->
 </head>
 <body>
 <!-- 头部区域 -->
@@ -27,9 +73,68 @@
         平板电视哪个好
     </div>
     <div class="brandproduct-list">
-        <a href="">
 
+        <a href="#">
+            <span>2</span>
+            <div class="title">海信平板电视</div>
+            <div class="des">30天全网销量:99999件</div>
         </a>
+        <a href="#">
+            <span>1</span>
+            <div class="title">海信平板电视</div>
+            <div class="des">30天全网销量:99999件</div>
+        </a>
+        <a href="#">
+            <span>3</span>
+            <div class="title">海信平板电视</div>
+            <div class="des">30天全网销量:99999件</div>
+        </a>
+        <a href="#">
+            <span>4</span>
+            <div class="title">海信平板电视</div>
+            <div class="des">30天全网销量:99999件</div>
+        </a>
+        <a href="#">
+            <span>5</span>
+            <div class="title">海信平板电视</div>
+            <div class="des">30天全网销量:99999件</div>
+        </a>
+        <a href="#">
+            <span>6</span>
+            <div class="title">海信平板电视</div>
+            <div class="des">30天全网销量:99999件</div>
+        </a>
+
+    </div>
+    <div class="brandproduct-title2">
+        平板电视产品销量排行
+    </div>
+     <div class="brandproduct-list2">
+         <div class="media">
+             <div class="media-left">
+                 <a href="category_product_detail.html?productid={{value.productId}}">
+                     <img src="images/product_info.jpg" alt="">
+                 </a>
+             </div>
+             <div class="media-body">
+                 <div class="product-info">
+                     <span class="title">{{value.productName}}</span>
+                     <div class="price">{{pagesize}}{{value.productPrice}}</div>
+                 </div>
+                 <div class="other-info">
+                     <span class="from">{{value.productQuote}}</span>
+                     <span class="words">{{value.productCom}}</span>
+                 </div>
+             </div>
+         </div>
+     </div>
+    <div class="productcom-title"></div>
+    <div class="productcom">
+        <div class="productcom-des">
+
+        </div>
+        <div class="productcom-words">
+        </div>
     </div>
 </section>
 <!-- 底部区域 -->

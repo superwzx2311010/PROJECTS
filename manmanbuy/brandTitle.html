@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script type=text/html id="brand-list-template">
         {{each result as value i}}
-        <a href="brandproductlist.html?brandTitleId={{value.brandTitleId}}">{{value.brandTitle}}</a>
+        <a href="brandproductlist.html?brandTitleId={{value.brandTitleId}}&brandTitle={{value.brandTitle}}">{{value.brandTitle}}</a>
         {{/each}}
 </script>
     <title>品牌大全</title>
