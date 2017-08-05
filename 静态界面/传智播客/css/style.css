@@ -1,0 +1,292 @@
+* {
+    margin:0;
+    padding: 0;
+
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clearfix {
+    *zoom: 1
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+.title {
+    height: 40px;
+    background-color: #055C92;
+    line-height: 40px;
+    color: #fff;
+}
+.title-l {
+    float: left;
+    font-size: 14px;
+}
+.title-r {
+    float: right;
+    font-size: 14px;
+
+}
+.nav {
+    height: 114px;
+}
+.nav .logo {
+    display: inline-block;
+    width: 166px;
+    height: 114px;
+    background: url(../images/logo.png) left center no-repeat;
+    background: url(../images/logo.png) left center no-repeat;
+    text-indent: -9999em;
+    overflow: hidden;
+    float: left;
+}
+.nav ul {
+    float: left;
+    margin-left: 66px;
+    margin-top: 50px;
+}
+.nav li {
+    margin-right:28px;
+    float: left;
+}
+.nav li a {
+    font-size: 16px;
+    color: black;
+}
+.banner {
+    height: 400px;
+}
+.banner-l {
+    width: 232px;
+    height: 400px;
+    background-color: #53000E;
+    float: left;
+}
+.banner-l ul {
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.banner-l ul a {
+    display: inline-block;
+    width: 152px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: normal;
+    overflow: hidden;
+
+}
+.banner-l li {
+    float: left;
+    line-height: 30px;
+}
+.banner-l li h3 {
+    float: left;
+}
+.banner-l li i {
+    float: right;
+    font-style: normal;
+}
+.banner-c {
+    width: 726px;
+    height: 400px;
+    background: url(../images/banner.jpg) -240px 0  no-repeat;
+    float: left;
+}
+
+.banner-r {
+    width: 230px;
+    height: 370px;
+    float: right;
+    border: 1px solid #E0E0E0;
+    margin-top: 28px;
+}
+.banner-r .tit {
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background-color: #055C92;
+    color: #fff;
+}
+.banner-r .info li {
+    line-height: 33px;
+    background: url(../images/dot.png)left top no-repeat;
+
+}
+.banner-r .info li a {
+    font-size: 12px;
+    padding-left: 20px;
+    color: black;
+
+}
+.banner-r .info li .red {
+    color: red;
+}
+.learn {
+    height: 262px;
+    margin-top: 36px;
+}
+.learn-t,.story-t {
+    height: 66px;
+}
+.learn-t h3 ,.story-t h3{
+    float: left;
+    margin-top: 32px;
+}
+.learn-t ul,.story-t ul {
+    float: right;
+}
+.learn-t ul li,.story-t ul li {
+    float: left;
+    margin-top: 26px;
+
+}
+.learn-t ul li a ,.story-t ul li a{
+    color: black;
+}
+.learn-b li {
+    float: left;
+    width: 228px;
+    height: 193px;
+    margin-right: 10px;
+    border: 1px solid #E0E0E0;
+}
+.learn-b .last {
+    margin: 0;
+}
+.learn-b .pic {
+    position: relative;
+    height: 120px;
+}
+.learn-b .pic img {
+    display: inline-block;
+    width: 228px;
+    height: 120px;
+
+}
+.learn-b .pic .tit {
+    width: 218px;
+    height: 20px;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    font: normal 700 12px/20px "微软雅黑";
+    margin-left: 10px;
+}
+.learn-b h3 {
+    line-height: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 12px;
+    margin-right: 4px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.learn-b .bm h4{
+    display: inline-block;
+    float: left;
+    line-height: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+.learn-b .bm a {
+    float: right;
+    width: 60px;
+    height: 20px;
+    border: 1px solid #ED4300;
+    color: #ED4300;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+.story-b {
+    height: 220px;
+}
+.story-b-in {
+    width: 288px;
+    height: 218px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 10px;
+
+}
+.story-b-in img {
+    width: 288px;
+    height: 162px;
+}
+.story-b-in h2 {
+    display: block;
+    width: 288px;
+    height: 55px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 55px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 255px;
+}
+.cream {
+    margin-top: 34px;
+    margin-bottom: 40px;
+}
+.publicity {
+     height: 115px;
+     background-color: #F3F3F3;
+ }
+.publicity li {
+    width: 235px;
+    height: 34px;
+    float: left;
+    text-align: center;
+    line-height: 34px;
+    margin-top: 41px;
+    border-left: 1px solid #E0E0E0;
+}
+.publicity .xiaoli {
+    border: 0;
+}
+.footer1 {
+    height: 160px;
+}
+.footer1 dl {
+    width: 172px;
+    float: left;
+}
+.footer1 dt a {
+    line-height: 60px;
+    font-size: 14px;
+    color: black;
+4}
+.footer1 dd a {
+    line-height: 24px;
+    color: #8D8D8D;
+    font-size: 14px;
+
+}
+.footer-link h3  {
+    line-height: 58px;
+    font-size: 14px;
+}
+.footer-link p {
+    font-size: 12px;
+    line-height: 27px;
+}
+.footer {
+    height: 120px;
+}
