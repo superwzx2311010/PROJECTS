@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>汽车品牌</title>
+    <style>
+        table{
+            width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        tr th{
+            padding: 5px;
+            background-color: #227eff;
+            font-size: 16px;
+            text-align: center;
+            color: #fff;
+            border: 1px solid black;
+        }
+        tr td{
+            padding: 5px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .shuru{
+            margin: 10px auto;
+            text-align: center;
+        }
+
+    </style>
+    <script src=vue1026.js></script>
+</head>
+<body>
+    <div id="app">
+        <div class="shuru">
+            品牌ID:<input type="text" name="" v-model="id" >
+            品牌名称:<input type="text" name="" v-model="name">
+            <button @click="addData">点击添加</button>
+            筛选名称:<input type="text" name="" v-model="sname">
+
+        </div>
+        <table>
+            <tr>
+            <th>序号</th>
+                <th>编号</th>
+                <th>品牌</th>
+                <th>时间</th>
+                <th>操作</th>
+            </tr>
+            <tr v-if="list.length==0">
+                <td colspan=5>当前列表暂无数据</td>
+            </tr>
+            <tr v-for="(index,item) in list | filterBy sname in 'name'  ">
+                <td>{{index+1}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.ctime}}</td>
+                <td><a href="javascript:;" @click="delData(item.id)">删除</a></td>
+            </tr>
+        </table>
+    </div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            list:[
+                {id:1,name:'奔驰',ctime:new Date},
+                {id:2,name:'宝马',ctime:new Date},
+                {id:3,name:'长安笨笨',ctime:new Date},
+                {id:4,name:'保时捷',ctime:new Date}
+            ],
+            id:"",
+            name:"",
+            sname:""
+        },
+        methods:{
+            addData:function () {
+                var p={  id:this.id,name:this.name,ctime: new Date()};
+                this.list.push(p);
+            },
+            delData:function (id) {
+                if(!confirm("是否要删除数据?")){
+                    return
+                }
+                var index=this.list.findIndex(function (item) {
+                    return item.id==id;
+                })
+                this.list.splice(index,1)
+    }
+        }
+    })
+</script>
+</body>
+</html>
