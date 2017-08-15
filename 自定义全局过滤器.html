@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=vue1026.js></script>
+</head>
+<body>
+<div id="app1">{{time1|hehe}}</div>
+<div id="app2">{{time2|hehe}}</div>
+<script>
+    Vue.filter('hehe',function (item) {
+        var year=item.getFullYear();
+        var month=item.getMonth()+1;
+        var day=item.getDate();
+        return year+"-"+month+"-"+day
+    })
+    new Vue({
+        el:"#app1",
+        data:{
+            time1:new Date()
+        }
+    })
+    new Vue({
+        el:"#app2",
+        data:{
+            time2:new Date()
+        }
+    })
+
+</script>
+</body>
+</html>
