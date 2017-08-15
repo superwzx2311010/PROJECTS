@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+       #show{
+           background-color: pink;
+           color:purple;
+           width: 100px;
+           height: 100px;
+       }
+        .show-enter,.show-leave-to{
+            /*opacity: 0;*/
+        }
+        .show-enter-active,.show-leave-active{
+            /*transition: opacity 500ms;*/
+        }
+        .show-enter-to,.show-leave{
+            /*opacity:1;*/
+        }
+    </style>
+    <script src=vue221.js></script>
+</head>
+<body>
+<div id=app>
+    <button @click="toggle">显示/隐藏</button>
+    <transition name="show" enter-active-class="animated zoomIn" leave-active-class="animated hinge">
+        <div v-show="isShow" id="show" >{{msg}}</div>
+    </transition>
+
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            isShow:true,
+            msg:"我要隐藏",
+        },
+        methods:{
+            toggle:function () {
+                console.log("haha");
+                this.isShow=!this.isShow;
+            }
+        }
+    })
+</script>
+</body>
+</html>
