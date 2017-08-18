@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>汽车品牌</title>
+    <style>
+        table{
+            width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        tr th{
+            padding: 5px;
+            background-color: #227eff;
+            font-size: 16px;
+            text-align: center;
+            color: #fff;
+            border: 1px solid black;
+        }
+        tr td{
+            padding: 5px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .shuru{
+            margin: 10px auto;
+            text-align: center;
+        }
+
+    </style>
+    <script src=vue1026.js></script>
+    <script src=vue-resource121.js></script>
+</head>
+<body>
+    <div id="app">
+        <div class="shuru">
+            品牌ID:<input type="text" name="" v-model="id" >
+            品牌名称:<input type="text" name="" v-model="name" @keydown.f2="addData">
+            <button @click="delData">点击shanchu</button>
+            <button @click="addData">点击添加</button>
+            筛选名称:<input type="text" name="" v-model="sname">
+
+        </div>
+        <table v-color="myColor">
+            <tr>
+            <th>序号</th>
+                <th>编号</th>
+                <th>品牌</th>
+                <th>时间</th>
+                <th>操作</th>
+            </tr>
+            <tr v-if="list.length==0">
+                <td colspan=5>当前列表暂无数据</td>
+            </tr>
+            <tr v-for="(index,item) in list | filterBy sname in 'name'  ">
+                <td>{{index+1}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.ctime}}</td>
+                <td><a href="javascript:;" @click="delData(item.id)">删除</a></td>
+            </tr>
+        </table>
+    </div>
+<script>
+    console.log(Vue.directive("on").keyCodes);
+    Vue.directive("on").keyCodes.f2=113;
+    Vue.directive("color",function () {
+        this.el.style.color=this.vm[this.expression]
+        console.log(this.expression);
+    })
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            myColor:"purple",
+            list:[
+
+            ],
+            id:"",
+            name:"",
+            sname:""
+        },
+        created:function () {
+            this.getData();
+        },
+        methods:{
+            getData:function () {
+                this.$http.get('http://139.199.192.48:8888/api/getprodlist')
+                    .then(function (response) {
+                        if(response.body.status!=0){
+                            alert(response.body.message);
+                            return
+                        }
+                        this.list=response.body.message;
+                    })
+            },
+            addData:function () {
+               for(var i=0;i<1000;i++){
+                   this.$http.post("http://139.199.192.48:8888/api/addproduct",{name:i},{emulateJSON:true})
+                       .then(function (response) {
+                           if(response.body.status !=0) {
+                               alert(response.body.message);
+                               return;
+                           }
+                           this.name="";
+
+                       })
+               }
+            },
+            delData:function (id) {
+               for(var i=38594;i<39886;i++){
+                   
+                   this.$http.get('http://139.199.192.48:8888/api/delproduct/'+i)
+                       .then(function (response) {
+                           if(response.body.status !=0) {
+                               alert(response.body.message);
+                               return;
+                           }
+                       })
+                   this.getData();
+               }
+
+    }
+        }
+    })
+</script>
+</body>
+</html>
