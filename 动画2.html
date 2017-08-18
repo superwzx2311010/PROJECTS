@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        #show{
+            background-color: pink;
+            color:purple;
+            width: 100px;
+            height: 100px;
+        }
+       .show{
+           transition:all  2s;
+       }
+    </style>
+    <script src=vue221.js></script>
+</head>
+<body>
+<div id=app>
+    <button @click="toggle">显示/隐藏</button>
+    <transition   @before-enter="beforeEnter" @enter="Enter" @after-enter="afterEnter">
+        <div v-show="isShow" id="show" style="width: 100px" class="show">{{msg}}</div>
+    </transition>
+
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            isShow:false,
+            msg:"我要隐藏",
+        },
+        methods:{
+            toggle:function () {
+                console.log("haha");
+                this.isShow=!this.isShow;
+            },
+            beforeEnter:function (el) {
+                el.style.transform="translate(200px,0)";
+                el.style.opacity="0";
+            },
+            Enter:function (el,done) {
+                el.offsetWidth;
+                el.style.transform="translate(10px,0)";
+                el.style.opacity="1";
+                done();
+            },
+            afterEnter:function (el) {
+                this.isShow=!this.isShow;
+            }
+        }
+    })
+</script>
+</body>
+</html>
