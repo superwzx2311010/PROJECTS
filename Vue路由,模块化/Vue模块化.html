@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=vue221.js></script>
+</head>
+<body>
+<div id="app">
+
+    <login></login>
+
+</div>
+<template id="login">
+    <div>
+        <h1>我是登录</h1>
+        <haha></haha>
+    </div>
+</template>
+<template id="haha">
+    <h2>我是子zujianhaha</h2>
+</template>
+<script>
+    Vue.component(
+        "login",{
+            template:"#login",
+            components:{
+                "haha":{
+                    template:"#haha"
+                }
+            }
+        }
+    )
+    new Vue({
+        el:"#app"
+    })
+</script>
+</body>
+</html>

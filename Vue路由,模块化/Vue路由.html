@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=vue221.js></script>
+    <script src=vue-router231.js></script>
+</head>
+<body>
+<div id="app">
+    <router-link to="/zong/fen1/haha">分1</router-link>
+    <router-link to="/zong/fen2">分2</router-link>
+    <router-link to="/zong">总</router-link>
+    <router-view></router-view>
+</div>
+<template id=zong>
+   <div>
+       <h1>我是总</h1>
+       <router-view></router-view>
+   </div>
+</template>
+<template id=fen1>
+    <h3>我是分1{{haha}}</h3>
+</template>
+<template id=fen2>
+    <h3>我是分2</h3>
+</template>
+<script>
+    var zong = Vue.extend({
+        template: "#zong"
+    });
+    var fen1 = Vue.extend({
+        template: "#fen1",
+        data:function () {
+            return{
+                haha:""
+            }
+        },
+        created:function () {
+            this.haha=this.$route.params.name;
+        }
+    });
+
+    var fen2 = Vue.extend({
+        template: "#fen2"
+    });
+    var router = new VueRouter({
+        routes: [
+            {
+                path: "/zong",
+                component: zong,
+                children:[
+                    {
+                        path: "fen1/:name",
+                        component: fen1,
+                    },
+                    {
+                        path: "fen2",
+                        component: fen2
+                    }
+                ]
+            },
+
+        ]
+    });
+    new Vue({
+        el: "#app",
+        router: router
+    });
+</script>
+</body>
+</html>
